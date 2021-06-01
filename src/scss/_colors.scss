@@ -1,0 +1,18 @@
+$nav:       #312450;
+$primary:   #5E42A6;
+$secondary: #5052B5;
+$tertiary:  #B74E91;
+
+$palette: (
+  nav:            $nav,
+  primary:        $primary,
+  primary-dark:   darken($primary, 10),
+  secondary:      $secondary,
+  secondary-dark: darken($secondary, 10),
+  tertiary:       $tertiary,
+  tertiary-dark:  darken($tertiary, 10),
+);
+
+@function color($color) {
+  @return map-get($palette, $color);
+}

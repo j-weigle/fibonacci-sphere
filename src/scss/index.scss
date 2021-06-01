@@ -1,0 +1,121 @@
+@import "mixins";
+@import "colors";
+
+$color-links:   #AAAAFFE0;
+
+html, body {
+  margin: 0;
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: block;
+  z-index: -1;
+}
+
+.button {
+  font-size: 0.9rem;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid color(secondary);
+  border-radius: 3rem;
+  line-height: 2rem;
+  height: 2rem;
+  width: 10rem;
+  background-color: transparent;
+}
+
+.wrapper {
+  width: 100%;
+  @include flex-h-centered(true);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  a {
+    text-decoration: none;
+    color: $color-links;
+  }
+
+  footer {
+    color: white;
+    margin: 1rem;
+  }
+}
+
+.content-wrapper {
+  width: 95%;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 50vh auto 30vh auto;
+  row-gap: 33vh;
+
+  section:nth-of-type(odd) {
+    grid-column: 1 / 8;
+  }
+  section:nth-of-type(even) {
+    grid-column: 6 / 13;
+  }
+
+  section {
+    min-height: 33vh;
+    border: 1px solid #FFFFFF50;
+    border-radius: 1.5rem;
+    background-color: #FFFFFF30;
+
+    .inner-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      font-family: Arial, Helvetica, sans-serif;
+
+      h1 {
+        padding: 0 0.5rem;
+        border-radius: 2rem;
+        font-size: 1rem;
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        background-color: #000000C0;
+      }
+      p {
+        align-self: flex-start;
+        margin: 0 1rem 1rem 1rem;
+        font-size: 0.75rem;
+        color: white;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .content-wrapper section .inner-section {
+    h1 {
+      padding: 0 0.75rem;
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+@media screen and (min-width: 960px) {
+  .content-wrapper section .inner-section {
+    h1 {
+      padding: 0 1rem;
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}

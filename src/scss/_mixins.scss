@@ -1,0 +1,31 @@
+@mixin flex-vh-centered ($col) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @if $col {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-v-centered ($col) {
+  display: flex;
+
+  @if $col {
+    flex-direction: column;
+    justify-content: center;
+  } @else {
+    align-items: center;
+  }
+}
+
+@mixin flex-h-centered ($col) {
+  display: flex;
+
+  @if $col {
+    flex-direction: column;
+    align-items: center;
+  } @else {
+    justify-content: center;
+  }
+}

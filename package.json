@@ -1,0 +1,19 @@
+{
+  "name": "fibonacci-sphere",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Justin Weigle",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "style": "sass ./src/scss/index.scss ./dist/css/index.css",
+    "build-all": "webpack && sass ./src/scss/index.scss ./dist/css/index.css"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "three": "^0.128.0",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  }
+}
